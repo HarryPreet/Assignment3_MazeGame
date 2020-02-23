@@ -6,6 +6,5 @@ public class TestMain {
         list.mazeGeneratorDepthFirstSearch();
         list.constraintCheck();
         list.displayRevealedGrid();
-
     }
 }
