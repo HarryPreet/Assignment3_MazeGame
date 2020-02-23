@@ -145,7 +145,6 @@ public class MyMaze {
             for(int j =1; j<width-2;j=j+1){
                 if(MazeGrid[i][j].getActualSymbol()=="#" && MazeGrid[i][j+1].getActualSymbol()=="#" && MazeGrid[i+1][j].getActualSymbol()=="#" && MazeGrid[i+1][j+1].getActualSymbol()=="#"){
                     MazeGrid[i][j].setActualSymbol(" ");
-
                 }
                 if(MazeGrid[i][j].getActualSymbol()==" " && MazeGrid[i][j+1].getActualSymbol()==" " && MazeGrid[i+1][j].getActualSymbol()==" " && MazeGrid[i+1][j+1].getActualSymbol()==" "){
                     MazeGrid[i][j].setActualSymbol("#");
