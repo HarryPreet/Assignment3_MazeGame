@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSInput;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TestMain {
@@ -11,11 +12,34 @@ public class TestMain {
         MazeBoard.constraintCheck();
         MazeBoard.setMoves();
         Mouse user = new Mouse("Mouse", "@");
-        user.setX(1);
-        user.setY(1);
         MazeBoard.getMazeGrid()[1][1].setCellElement(user);
         MazeBoard.getMazeGrid()[1][1].setActualSymbol(user.getSymbol());
         MazeBoard.getMazeGrid()[1][1].setMaskSymbol(user.getSymbol());
+
+        Cat cat1 = new Cat("Cat","!");
+        Cat cat2 = new Cat("Cat","!");
+        Cat cat3 = new Cat("Cat","!");
+
+        MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1].setActualSymbol("!");
+        MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1].setCellElement(cat1);
+        cat1.setCurrentCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1]);
+        cat1.setPreviousCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1]);
+
+
+        MazeBoard.getMazeGrid()[1][MazeBoard.getWidth()-2].setActualSymbol("!");
+        MazeBoard.getMazeGrid()[1][MazeBoard.getWidth()-2].setCellElement(cat2);
+        cat2.setCurrentCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1]);
+        cat2.setPreviousCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][1]);
+
+        MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2].setActualSymbol("!");
+        MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2].setCellElement(cat3);
+        cat3.setCurrentCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2]);
+        cat3.setPreviousCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2]);
+
+        Random rand = new Random();
+
+
+
 
         MazeCell current = MazeBoard.getMazeGrid()[1][1];
         user.setCurrentCell(current);
@@ -30,9 +54,6 @@ public class TestMain {
             int x = current.getX();
             int y = current.getY();
 
-            for(MazeCell c : current.getAvailableMoves()){
-                System.out.println(c.getX() + ","+c.getY());
-            }
 
             switch (move) {
                 case "w":
@@ -43,6 +64,12 @@ public class TestMain {
                         current.setActualSymbol(user.getSymbol());
                         current.setMaskSymbol(user.getSymbol());
                         user.setCurrentCell(current);
+
+                        cat1.setNextCell(cat1.getCurrentCell().getAvailableMoves().get(rand.nextInt(cat1.getCurrentCell().getAvailableMoves().getSize())));
+                        cat1.getNextCell().getAvailableMoves().remove(cat1.getCurrentCell());
+                        cat1.setCurrentCell(cat1.getNextCell());
+                        MazeBoard.getMazeGrid()[cat1.getNextCell().getX()][cat1.getNextCell().getY()].setActualSymbol(cat1.getSymbol());
+
                     } else {
                         System.out.println("Illegal Move!");
                     }
