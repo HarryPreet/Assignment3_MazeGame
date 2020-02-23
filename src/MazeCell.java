@@ -11,6 +11,27 @@ public class MazeCell {
     private String maskSymbol;
     //List to hold neighbours of a given cell
     private MazeCellManager neighbours = new MazeCellManager();
+    //Available Moves
+    private MazeCellManager availableMoves = new MazeCellManager();
+
+    private GameElement cellElement;
+
+    public GameElement getCellElement() {
+        return cellElement;
+    }
+
+    public void setCellElement(GameElement cellElement) {
+        this.cellElement = cellElement;
+    }
+
+    public MazeCellManager getAvailableMoves() {
+        return availableMoves;
+    }
+
+    public void setAvailableMoves(MazeCellManager availableMoves) {
+        this.availableMoves = availableMoves;
+    }
+
 
 
     public String getMaskSymbol() {
