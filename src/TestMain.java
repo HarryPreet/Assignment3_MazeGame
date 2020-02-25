@@ -11,12 +11,16 @@ public class TestMain {
         MazeBoard.mazeGeneratorDepthFirstSearch();
         MazeBoard.constraintCheck();
         MazeBoard.setMoves();
-        Mouse user = new Mouse("Mouse", "@");
-        MazeBoard.getMazeGrid()[1][1].setCellElement(user);
-        MazeBoard.getMazeGrid()[1][1].setActualSymbol(user.getSymbol());
-        MazeBoard.getMazeGrid()[1][1].setMaskSymbol(user.getSymbol());
 
-        Cat cat1 = new Cat("Cat","!");
+        Mouse user = new Mouse("Mouse", "@");
+
+        MazeCell current = MazeBoard.getMazeGrid()[1][1];
+        current.setCellElement(user);
+        current.setActualSymbol(user.getSymbol());
+        current.setMaskSymbol(user.getSymbol());
+        user.setCurrentCell(current);
+
+        /*Cat cat1 = new Cat("Cat","!");
         Cat cat2 = new Cat("Cat","!");
         Cat cat3 = new Cat("Cat","!");
 
@@ -34,17 +38,9 @@ public class TestMain {
         MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2].setActualSymbol("!");
         MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2].setCellElement(cat3);
         cat3.setCurrentCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2]);
-        cat3.setPreviousCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2]);
+        cat3.setPreviousCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight()-2][MazeBoard.getWidth()-2]);*/
 
         Random rand = new Random();
-
-
-
-
-        MazeCell current = MazeBoard.getMazeGrid()[1][1];
-        user.setCurrentCell(current);
-
-
         Scanner input = new Scanner(System.in);
         while(true) {
             MazeBoard.displayRevealedGrid();
@@ -64,11 +60,10 @@ public class TestMain {
                         current.setActualSymbol(user.getSymbol());
                         current.setMaskSymbol(user.getSymbol());
                         user.setCurrentCell(current);
-
-                        cat1.setNextCell(cat1.getCurrentCell().getAvailableMoves().get(rand.nextInt(cat1.getCurrentCell().getAvailableMoves().getSize())));
+                        /*cat1.setNextCell(cat1.getCurrentCell().getAvailableMoves().get(rand.nextInt(cat1.getCurrentCell().getAvailableMoves().getSize())));
                         cat1.getNextCell().getAvailableMoves().remove(cat1.getCurrentCell());
                         cat1.setCurrentCell(cat1.getNextCell());
-                        MazeBoard.getMazeGrid()[cat1.getNextCell().getX()][cat1.getNextCell().getY()].setActualSymbol(cat1.getSymbol());
+                        MazeBoard.getMazeGrid()[cat1.getNextCell().getX()][cat1.getNextCell().getY()].setActualSymbol(cat1.getSymbol());*/
 
                     } else {
                         System.out.println("Illegal Move!");
