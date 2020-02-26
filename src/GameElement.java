@@ -1,3 +1,5 @@
+//package GameLogic;
+
 public class GameElement {
     private String name;
     private String symbol;
@@ -10,15 +12,13 @@ public class GameElement {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSymbol() {
         return symbol;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }

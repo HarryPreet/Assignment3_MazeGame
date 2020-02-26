@@ -1,3 +1,5 @@
+//package GameLogic;
+
 import java.util.*;
 
 public class MyMaze {
@@ -13,29 +15,29 @@ public class MyMaze {
     }
 
     //2D array to represent the maze
+
+    //getters
     public MazeCell[][] getMazeGrid() {
         return MazeGrid;
     }
-
-    public void setMazeGrid(MazeCell[][] mazeGrid) {
-        MazeGrid = mazeGrid;
+    public int getHeight() {
+        return height;
     }
-
     public int getWidth() {
         return width;
     }
 
+    //setters
+    public void setMazeGrid(MazeCell[][] mazeGrid) {
+        MazeGrid = mazeGrid;
+    }
+    public void setHeight(int height) {
+        this.height = height;
+    }
     public void setWidth(int width) {
         this.width = width;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
     //Making grid of maze
 
@@ -90,8 +92,6 @@ public class MyMaze {
     }
 
     //Generating maze using iterative dfs
-
-
     public void mazeGeneratorDepthFirstSearch() {
         Stack<MazeCell> dfsStack = new Stack<>();
         MazeCellManager explored = new MazeCellManager();
@@ -190,7 +190,7 @@ public class MyMaze {
         for (int i = 1; i < height - 1; ++i) {
             for (int j = 1; j < width - 1; j++) {
                for(MazeCell c : MazeGrid[i][j].getNeighbours()){
-                   if(c.getActualSymbol()==" "){
+                   if(c.getActualSymbol().equals(" ")){
                        MazeGrid[i][j].getAvailableMoves().add(c);
                    }
                }
@@ -198,6 +198,4 @@ public class MyMaze {
             }
         }
     }
-
-
 }
