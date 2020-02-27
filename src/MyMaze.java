@@ -65,14 +65,7 @@ public class MyMaze {
 
     //Display the entire maze with what they hold
     //Should remove this in final submission
-    public void displayRevealedGrid() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(MazeGrid[i][j]);
-            }
-            System.out.println();
-        }
-    }
+
 
     public void displayHiddenGrid() {
         for (int i = 0; i < height; i++) {
@@ -204,6 +197,10 @@ public class MyMaze {
     }
 
     public boolean cheeseCheck(Mouse m, Cheese c) {
+        return m.getCurrentCell().getX() == c.getCurrentCell().getX() && m.getCurrentCell().getY() == c.getCurrentCell().getY();
+    }
+
+    public boolean lossCheck(Mouse m, Cat c){
         return m.getCurrentCell().getX() == c.getCurrentCell().getX() && m.getCurrentCell().getY() == c.getCurrentCell().getY();
     }
 }

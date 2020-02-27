@@ -3,6 +3,22 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CheeseManager implements Iterable<Cheese> {
+    public List<Cheese> getCheeseList() {
+        return cheeseList;
+    }
+
+    public void setCheeseList(List<Cheese> cheeseList) {
+        this.cheeseList = cheeseList;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     List<Cheese> cheeseList = new ArrayList<>();
     int size;
 
@@ -17,6 +33,7 @@ public class CheeseManager implements Iterable<Cheese> {
         cheeseList.remove(position);
         size--;
     }
+
     @Override
     public Iterator<Cheese> iterator() {
         return cheeseList.iterator();

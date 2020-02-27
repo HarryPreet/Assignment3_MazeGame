@@ -8,6 +8,7 @@ public class MazeCell {
     private MazeCellManager neighbours = new MazeCellManager();      //List to hold neighbours of a given cell
     private MazeCellManager availableMoves = new MazeCellManager();  //Available Cell to Move to
     private GameElement cellElement;
+    private GameElement secondaryElement;
 
     //constructor
     public MazeCell(int x, int y, String actualSymbol, String maskSymbol) {
