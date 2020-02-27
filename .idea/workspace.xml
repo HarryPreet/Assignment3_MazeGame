@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30420946-eab5-43b2-b46a-6ac576fe73c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/CheeseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GameElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GameElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/MazeCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/MazeCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/MazeCellManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/MazeCellManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Mouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/MyMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/MyMaze.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Assignment3/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/TestMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cheese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MazeCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MazeCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,10 +91,14 @@
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
     <state x="358" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1805.1163@0.0.1805.1163" timestamp="1582430006860" />
-    <state x="708" y="284" key="#com.intellij.ide.util.MemberChooser" timestamp="1582476268796">
+    <state x="708" y="284" key="#com.intellij.ide.util.MemberChooser" timestamp="1582765677195">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state x="708" y="284" key="#com.intellij.ide.util.MemberChooser/0.0.1805.1163@0.0.1805.1163" timestamp="1582476268796" />
+    <state x="708" y="284" key="#com.intellij.ide.util.MemberChooser/0.0.1805.1163@0.0.1805.1163" timestamp="1582765677195" />
+    <state x="619" y="292" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1582761049008">
+      <screen x="0" y="0" width="1805" height="1163" />
+    </state>
+    <state x="619" y="292" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1805.1163@0.0.1805.1163" timestamp="1582761049008" />
     <state x="649" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582434154524">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
@@ -91,45 +107,49 @@
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
     <state x="633" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1805.1163@0.0.1805.1163" timestamp="1582470400607" />
-    <state width="1747" height="861" key="GridCell.Tab.0.bottom" timestamp="1582537714458">
+    <state width="1762" height="375" key="GridCell.Tab.0.bottom" timestamp="1582766390454">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1747" height="861" key="GridCell.Tab.0.bottom/0.0.1805.1163@0.0.1805.1163" timestamp="1582537714458" />
-    <state width="1747" height="861" key="GridCell.Tab.0.center" timestamp="1582537714458">
+    <state width="1762" height="375" key="GridCell.Tab.0.bottom/0.0.1805.1163@0.0.1805.1163" timestamp="1582766390454" />
+    <state width="1762" height="375" key="GridCell.Tab.0.center" timestamp="1582766390453">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1747" height="861" key="GridCell.Tab.0.center/0.0.1805.1163@0.0.1805.1163" timestamp="1582537714458" />
-    <state width="1747" height="861" key="GridCell.Tab.0.left" timestamp="1582537714458">
+    <state width="1762" height="375" key="GridCell.Tab.0.center/0.0.1805.1163@0.0.1805.1163" timestamp="1582766390453" />
+    <state width="1762" height="375" key="GridCell.Tab.0.left" timestamp="1582766390453">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1747" height="861" key="GridCell.Tab.0.left/0.0.1805.1163@0.0.1805.1163" timestamp="1582537714458" />
-    <state width="1747" height="861" key="GridCell.Tab.0.right" timestamp="1582537714458">
+    <state width="1762" height="375" key="GridCell.Tab.0.left/0.0.1805.1163@0.0.1805.1163" timestamp="1582766390453" />
+    <state width="1762" height="375" key="GridCell.Tab.0.right" timestamp="1582766390454">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1747" height="861" key="GridCell.Tab.0.right/0.0.1805.1163@0.0.1805.1163" timestamp="1582537714458" />
-    <state width="1762" height="396" key="GridCell.Tab.1.bottom" timestamp="1582472093831">
+    <state width="1762" height="375" key="GridCell.Tab.0.right/0.0.1805.1163@0.0.1805.1163" timestamp="1582766390454" />
+    <state width="1762" height="396" key="GridCell.Tab.1.bottom" timestamp="1582685367445">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1762" height="396" key="GridCell.Tab.1.bottom/0.0.1805.1163@0.0.1805.1163" timestamp="1582472093831" />
-    <state width="1762" height="396" key="GridCell.Tab.1.center" timestamp="1582472093831">
+    <state width="1762" height="396" key="GridCell.Tab.1.bottom/0.0.1805.1163@0.0.1805.1163" timestamp="1582685367445" />
+    <state width="1762" height="396" key="GridCell.Tab.1.center" timestamp="1582685367445">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1762" height="396" key="GridCell.Tab.1.center/0.0.1805.1163@0.0.1805.1163" timestamp="1582472093831" />
-    <state width="1762" height="396" key="GridCell.Tab.1.left" timestamp="1582472093830">
+    <state width="1762" height="396" key="GridCell.Tab.1.center/0.0.1805.1163@0.0.1805.1163" timestamp="1582685367445" />
+    <state width="1762" height="396" key="GridCell.Tab.1.left" timestamp="1582685367444">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1762" height="396" key="GridCell.Tab.1.left/0.0.1805.1163@0.0.1805.1163" timestamp="1582472093830" />
-    <state width="1762" height="396" key="GridCell.Tab.1.right" timestamp="1582472093831">
+    <state width="1762" height="396" key="GridCell.Tab.1.left/0.0.1805.1163@0.0.1805.1163" timestamp="1582685367444" />
+    <state width="1762" height="396" key="GridCell.Tab.1.right" timestamp="1582685367445">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state width="1762" height="396" key="GridCell.Tab.1.right/0.0.1805.1163@0.0.1805.1163" timestamp="1582472093831" />
+    <state width="1762" height="396" key="GridCell.Tab.1.right/0.0.1805.1163@0.0.1805.1163" timestamp="1582685367445" />
+    <state x="599" y="407" key="com.intellij.ide.util.TipDialog" timestamp="1582744270228">
+      <screen x="0" y="0" width="1805" height="1163" />
+    </state>
+    <state x="599" y="407" key="com.intellij.ide.util.TipDialog/0.0.1805.1163@0.0.1805.1163" timestamp="1582744270228" />
     <state x="609" y="202" key="refactoring.ChangeSignatureDialog" timestamp="1582462641977">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
     <state x="609" y="202" key="refactoring.ChangeSignatureDialog/0.0.1805.1163@0.0.1805.1163" timestamp="1582462641977" />
-    <state x="565" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1582433919591">
+    <state x="565" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1582760637225">
       <screen x="0" y="0" width="1805" height="1163" />
     </state>
-    <state x="565" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1805.1163@0.0.1805.1163" timestamp="1582433919591" />
+    <state x="565" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1805.1163@0.0.1805.1163" timestamp="1582760637225" />
   </component>
 </project>

@@ -20,9 +20,11 @@ public class MyMaze {
     public MazeCell[][] getMazeGrid() {
         return MazeGrid;
     }
+
     public int getHeight() {
         return height;
     }
+
     public int getWidth() {
         return width;
     }
@@ -31,9 +33,11 @@ public class MyMaze {
     public void setMazeGrid(MazeCell[][] mazeGrid) {
         MazeGrid = mazeGrid;
     }
+
     public void setHeight(int height) {
         this.height = height;
     }
+
     public void setWidth(int width) {
         this.width = width;
     }
@@ -70,7 +74,7 @@ public class MyMaze {
         }
     }
 
-    public void displayHiddenGrid(){
+    public void displayHiddenGrid() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 System.out.print(MazeGrid[i][j].getMaskSymbol());
@@ -186,16 +190,21 @@ public class MyMaze {
         removeWalls();
     }
 
-    public void setMoves(){
+    public void setMoves() {
         for (int i = 1; i < height - 1; ++i) {
-            for (int j = 1; j < width - 1; j++) {
-               for(MazeCell c : MazeGrid[i][j].getNeighbours()){
-                   if(c.getActualSymbol().equals(" ")){
-                       MazeGrid[i][j].getAvailableMoves().add(c);
-                   }
-               }
-
+            for (int j = 1; j < width - 1; ++j) {
+                for (MazeCell c : MazeGrid[i][j].getNeighbours()) {
+                    if (!c.getActualSymbol().equals("#")) {
+                        MazeGrid[i][j].getAvailableMoves().add(c);
+                        //System.out.println(c);
+                    }
+                }
             }
         }
     }
+
+    public boolean cheeseCheck(Mouse m, Cheese c) {
+        return m.getCurrentCell().getX() == c.getCurrentCell().getX() && m.getCurrentCell().getY() == c.getCurrentCell().getY();
+    }
 }
+

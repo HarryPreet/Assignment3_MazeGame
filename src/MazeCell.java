@@ -6,7 +6,7 @@ public class MazeCell {
     private String actualSymbol;        //Variable to hold what exactly is in the cell
     private String maskSymbol;          //Variable to display masked cells
     private MazeCellManager neighbours = new MazeCellManager();      //List to hold neighbours of a given cell
-    private MazeCellManager availableMoves = new MazeCellManager();  //Available Moves
+    private MazeCellManager availableMoves = new MazeCellManager();  //Available Cell to Move to
     private GameElement cellElement;
 
     //constructor
