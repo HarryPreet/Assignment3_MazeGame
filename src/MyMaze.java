@@ -1,6 +1,9 @@
-//package GameLogic;
 
-import java.util.*;
+
+
+
+import java.util.Random;
+import java.util.Stack;
 
 public class MyMaze {
     private MazeCell[][] MazeGrid;
@@ -12,6 +15,11 @@ public class MyMaze {
         this.height = height;
         this.width = width;
         MazeGrid = new MazeCell[height][width];
+        makeGrid();
+       setNeighbours();
+        mazeGeneratorDepthFirstSearch();
+        constraintCheck();
+       setMoves();
     }
 
     //2D array to represent the maze
@@ -63,18 +71,7 @@ public class MyMaze {
         }
     }
 
-    //Display the entire maze with what they hold
-    //Should remove this in final submission
 
-
-    public void displayHiddenGrid() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(MazeGrid[i][j].getMaskSymbol());
-            }
-            System.out.println();
-        }
-    }
 
     //Setting neighbours of a particular cell
     public void setNeighbours() {

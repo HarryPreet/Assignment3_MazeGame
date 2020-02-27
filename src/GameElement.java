@@ -1,4 +1,3 @@
-//package GameLogic;
 
 public class GameElement {
     private String name;

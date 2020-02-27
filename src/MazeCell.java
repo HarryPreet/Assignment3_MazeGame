@@ -1,4 +1,4 @@
-//package GameLogic;//Class to represent a cell in the maze
+
 
 public class MazeCell {
     private int x;

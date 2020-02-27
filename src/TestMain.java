@@ -1,37 +1,32 @@
-//package GameLogic;
 
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class TestMain {
-    private static int noOfCheeseCollected = 0;
-    private static int totalCheeseToCollect = 5;
     private final static int height = 15;
     private final static int width = 20;
-
+    private static int noOfCheeseCollected = 0;
+    private static int totalCheeseToCollect = 5;
 
     public static void main(String[] args) {
         MyMaze MazeBoard = new MyMaze(height, width);
-        MazeBoard.makeGrid();
-        MazeBoard.setNeighbours();
-        MazeBoard.mazeGeneratorDepthFirstSearch();
-        MazeBoard.constraintCheck();
-        MazeBoard.setMoves();
-        Random rand = new Random();
-        int randomMove1;
-        CheeseManager cheeses = new CheeseManager(5);
-
+        CheeseManager cheeses = new CheeseManager(totalCheeseToCollect);
         Mouse user = new Mouse("Mouse", "@");
-
         MazeCell current = MazeBoard.getMazeGrid()[1][1];
-        current.setCellElement(user);
-        current.setActualSymbol(user.getSymbol());
-        current.setMaskSymbol(user.getSymbol());
-        user.setCurrentCell(current);
 
         Cat cat1 = new Cat("Cat", "!");
         Cat cat2 = new Cat("Cat", "!");
         Cat cat3 = new Cat("Cat", "!");
+
+        int randomMove1;
+        int randomMove2;
+        int randomMove3;
+
+
+        current.setCellElement(user);
+        current.setActualSymbol(user.getSymbol());
+        current.setMaskSymbol(user.getSymbol());
+        user.setCurrentCell(current);
 
 
         //Setting positions of Cats
@@ -46,29 +41,34 @@ public class TestMain {
         MazeBoard.getMazeGrid()[MazeBoard.getHeight() - 2][MazeBoard.getWidth() - 2].setMaskSymbol("!");
         MazeBoard.getMazeGrid()[MazeBoard.getHeight() - 2][MazeBoard.getWidth() - 2].setCellElement(cat2);
         cat2.setCurrentCell(MazeBoard.getMazeGrid()[MazeBoard.getHeight() - 2][MazeBoard.getWidth() - 2]);
-        int randomMove2 = cat2.firstMove();
+        randomMove2 = cat2.firstMove();
         cat2.setNextCell(cat2.getCurrentCell().getAvailableMoves().get(randomMove2));
 
         MazeBoard.getMazeGrid()[1][MazeBoard.getWidth() - 2].setActualSymbol("!");
         MazeBoard.getMazeGrid()[1][MazeBoard.getWidth() - 2].setMaskSymbol("!");
         MazeBoard.getMazeGrid()[1][MazeBoard.getWidth() - 2].setCellElement(cat3);
         cat3.setCurrentCell(MazeBoard.getMazeGrid()[1][MazeBoard.getWidth() - 2]);
-        int randomMove3 = cat3.firstMove();
+        randomMove3 = cat3.firstMove();
         cat3.setNextCell(cat3.getCurrentCell().getAvailableMoves().get(randomMove3));
 
 
-        for (int i = 0; i < 5; i++) {
-            Cheese cheese = new Cheese("Cheese", "$");
+        for (int i = 0; i < totalCheeseToCollect; i++) {
+            Cheese cheese = new Cheese("ca.cmpt213.as3.Cheese", "$");
             cheese.placeCheese(MazeBoard);
             cheeses.add(cheese);
         }
 
         MazeBoard.setMoves();
+
         Scanner input = new Scanner(System.in);
 
+        int cheeseCount = 0;
+
+
         while (true) {
+            cheeses.getCheeseList().get(cheeseCount).getCurrentCell().setMaskSymbol("$");
             displayHiddenGrid(current, MazeBoard);
-            System.out.println("Cheese collected: " + noOfCheeseCollected + " of " + totalCheeseToCollect);
+            System.out.println("ca.cmpt213.as3.Cheese collected: " + noOfCheeseCollected + " of " + totalCheeseToCollect);
             System.out.println("Enter your move [WASD?]: ");
             String move = input.nextLine();
             move = move.toLowerCase();
@@ -78,6 +78,15 @@ public class TestMain {
 
 
             switch (move) {
+                case "m":
+                    displayRevealedGrid(MazeBoard);
+                    break;
+                case "c":
+                    totalCheeseToCollect = 1;
+                    noOfCheeseCollected = 0;
+                    break;
+
+
                 case "w":
                     if (current.getAvailableMoves().isFound(MazeBoard.getMazeGrid()[x - 1][y])) {
                         current.setActualSymbol(" ");
@@ -90,6 +99,7 @@ public class TestMain {
                             if (MazeBoard.cheeseCheck(user, cheeses.getCheeseList().get(i))) {
                                 cheeses.getCheeseList().remove(i);
                                 noOfCheeseCollected++;
+                                cheeseCount++;
                                 break;
                             }
                         }
@@ -104,6 +114,7 @@ public class TestMain {
                         cat3.moveCat(MazeBoard);
                         if (MazeBoard.lossCheck(user, cat1) && MazeBoard.lossCheck(user, cat1) && MazeBoard.lossCheck(user, cat1)) {
                             System.out.println("You Lose! Game Over!");
+                            displayRevealedGrid(MazeBoard);
                             return;
                         }
 
@@ -124,6 +135,7 @@ public class TestMain {
                             if (MazeBoard.cheeseCheck(user, cheeses.getCheeseList().get(i))) {
                                 cheeses.getCheeseList().remove(i);
                                 noOfCheeseCollected++;
+                                cheeseCount++;
                                 break;
                             }
                         }
@@ -158,6 +170,7 @@ public class TestMain {
                             if (MazeBoard.cheeseCheck(user, cheeses.getCheeseList().get(i))) {
                                 cheeses.getCheeseList().remove(i);
                                 noOfCheeseCollected++;
+                                cheeseCount++;
                                 break;
                             }
                         }
@@ -191,6 +204,7 @@ public class TestMain {
                             if (MazeBoard.cheeseCheck(user, cheeses.getCheeseList().get(i))) {
                                 cheeses.getCheeseList().remove(i);
                                 noOfCheeseCollected++;
+                                cheeseCount++;
                                 break;
                             }
                         }
@@ -235,7 +249,7 @@ public class TestMain {
     public static void displayRevealedGrid(MyMaze MazeBoard) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.print(MazeBoard.getMazeGrid()[i][j].getMaskSymbol());
+                System.out.print(MazeBoard.getMazeGrid()[i][j].getActualSymbol());
             }
             System.out.println();
         }

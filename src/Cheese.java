@@ -1,3 +1,5 @@
+
+
 import java.util.Random;
 
 public class Cheese extends GameElement{
@@ -10,9 +12,11 @@ public class Cheese extends GameElement{
     }
 
     private MazeCell currentCell;
+    private String maskSymbol;
 
     public Cheese(String name, String symbol) {
         super(name, symbol);
+        maskSymbol = ".";
     }
 
     public void placeCheese(MyMaze m){
@@ -27,7 +31,7 @@ public class Cheese extends GameElement{
         }
         currentCell = m.getMazeGrid()[xPosition][yPosition];
         m.getMazeGrid()[xPosition][yPosition].setActualSymbol(this.getSymbol());
-        m.getMazeGrid()[xPosition][yPosition].setMaskSymbol(this.getSymbol());
+        m.getMazeGrid()[xPosition][yPosition].setMaskSymbol(this.maskSymbol);
     }
 
 }
